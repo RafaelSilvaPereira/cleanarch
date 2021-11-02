@@ -1,0 +1,72 @@
+Arguments: 
+  /usr/bin/node /usr/share/yarn/bin/yarn.js publish
+
+PATH: 
+  /home/rafael/work/experiments/cleanarch/node_modules/.bin:/home/rafael/.local/bin:/home/rafael/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/rafael/bin:/usr/lib/jvm/java-8-openjdk-amd64/jre//bin:/usr/lib/dart/bin:/home/rafael/.local/bin:/home/rafael/tools/flutter/bin/:/usr/bin/dart:/home/rafael/npm/bin
+
+Yarn version: 
+  1.22.15
+
+Node version: 
+  14.18.1
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: canceled
+      at Interface.<anonymous> (/usr/share/yarn/lib/cli.js:137145:13)
+      at Interface.emit (events.js:400:28)
+      at Interface._ttyWrite (readline.js:1001:16)
+      at ReadStream.onkeypress (readline.js:265:10)
+      at ReadStream.emit (events.js:400:28)
+      at emitKeys (internal/readline/utils.js:358:14)
+      at emitKeys.next (<anonymous>)
+      at ReadStream.onData (readline.js:1270:36)
+      at ReadStream.emit (events.js:400:28)
+      at addChunk (internal/streams/readable.js:293:12)
+
+npm manifest: 
+  {
+    "name": "cleanarch",
+    "version": "1.0.21",
+    "description": "A CLI to generate folders/files based on clean architecutre",
+    "main": "dist/main.js",
+    "bin": {
+      "cleanarch": "./dist/main.js"
+    },
+    "types": "dist/main.d.ts",
+    "scripts": {
+      "prepublish": "tsc",
+      "build": "tsc",
+      "tsc:w": "rimraf build && tsc -w",
+      "start": "node ./build/main.js",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "sprafael",
+    "license": "ISC",
+    "dependencies": {
+      "commander": "^8.2.0",
+      "rimraf": "^3.0.2"
+    },
+    "devDependencies": {
+      "@types/node": "^16.10.2",
+      "@typescript-eslint/eslint-plugin": "^4.32.0",
+      "@typescript-eslint/parser": "^4.32.0",
+      "eslint": "^7.32.0",
+      "eslint-config-prettier": "^8.3.0",
+      "eslint-plugin-prettier": "^4.0.0",
+      "prettier": "^2.4.1",
+      "ts-loader": "^9.2.6",
+      "ts-node": "^10.2.1",
+      "tsconfig-paths": "^3.11.0",
+      "typescript": "^4.4.3"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

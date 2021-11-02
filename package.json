@@ -1,0 +1,37 @@
+{
+  "name": "cleanarch",
+  "version": "1.0.22",
+  "description": "A CLI to generate folders/files based on clean architecutre",
+  "main": "dist/main.js",
+  "bin": {
+    "cleanarch": "./dist/main.js"
+  },
+  "types": "dist/main.d.ts",
+  "scripts": {
+    "prepublish": "tsc",
+    "build": "tsc",
+    "tsc:w": "rimraf build && tsc -w",
+    "start": "node ./build/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "sprafael",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^8.2.0",
+    "rimraf": "^3.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^16.10.2",
+    "@typescript-eslint/eslint-plugin": "^4.32.0",
+    "@typescript-eslint/parser": "^4.32.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.4.1",
+    "ts-loader": "^9.2.6",
+    "ts-node": "^10.2.1",
+    "tsconfig-paths": "^3.11.0",
+    "typescript": "^4.4.3"
+  }
+}

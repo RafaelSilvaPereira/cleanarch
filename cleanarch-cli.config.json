@@ -1,0 +1,80 @@
+{
+    "lintPreferences": {
+        "useSemicolon": true
+    },
+    "commands": [
+        {
+            "command": "-it --interface [commands...]",
+            "comment": "Generate an Interface"
+        },
+        {
+            "command": "-uc --usecase [commands...]",
+            "comment": "Generate an Usecase"
+        },
+        {
+            "command": "-pc --protocol [commands...]",
+            "comment": "Generate an Protocol"
+        },
+        {
+            "command": "-ct --connector [commands...]",
+            "comment": "Generate an Connector"
+        }
+    ],
+    "schema": [
+        {
+            "sufix": "Strategy",
+            "extensionSufix": ".strategy",
+            "languageSufix": ".ts",
+            "defaultImplementsSuffix": "",
+            "defaultDependenciesSuffix": "",
+            "useDecorators": [],
+            "folder": "./core/strategies/",
+            "defaultMethods": [
+                "abstract call(data: INPUT_TYPE): Promise<OUTPUT_TYPE> {}"
+            ],
+            "abstract": true,
+        },
+        {
+            "sufix": "Usecase",
+            "extensionSufix": ".usecase",
+            "languageSufix": ".ts",
+            "defaultImplementsSuffix": "Strategy",
+            "defaultDependenciesSuffix": "Protocol",
+            "useDecorators": [
+                "@Core.Injection()"
+            ],
+            "defaultMethods": [],
+            "folder": "./core/usecases/",
+            "abstract": false,
+        },
+        {
+            "sufix": "Protocol",
+            "extensionSufix": ".protocol",
+            "languageSufix": ".ts",
+            "defaultImplementsSuffix": "",
+            "defaultMethods": [
+                "abstract call(data: INPUT_TYPE): Promise<OUTPUT_TYPE> {}"
+            ],
+            "defaultDependenciesSuffix": "",
+            "useDecorators": [],
+            "folder": "./core/protocols/",
+            "abstract": true
+        },
+        {
+            "sufix": "Connector",
+            "extensionSufix": ".connector",
+            "languageSufix": ".ts",
+            "defaultImplementsSuffix": "Protocol",
+            "defaultDependenciesSuffix": "",
+            "defaultMethods": [],
+            "useDecorators": [
+                "@Core.Injection()"
+            ],
+            "folder": "./adapters/connectors/",
+            "abstract": false
+        }
+    ],
+    "exportsConfig": {
+        "extensionType": ".ts"
+    }
+}
